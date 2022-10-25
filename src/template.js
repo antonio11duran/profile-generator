@@ -1,5 +1,6 @@
 const manager = mdata => {
     return `
+    <div class="col-3">
     <div class="card" id="manager-card" style="width: 18rem;">
     <div class="card-body">
         <!-- Name of employee -->
@@ -12,11 +13,13 @@ const manager = mdata => {
         <li class="list-group-item">Email: <a href="mailto:${mdata.getEmail()}">${mdata.getEmail()}</a></li>
         <li class="list-group-item">Office Number: ${mdata.getOfficeNumber()}</li>
     </ul>
+    </div>
 </div>`
 }
 
 const engineer = edata => {
     return `
+    <div class="col-3">
     <div class="card" style="width: 18rem;">
     <div class="card-body">
         <!-- Name of employee -->
@@ -29,11 +32,13 @@ const engineer = edata => {
         <li class="list-group-item">Email: <a href="mailto:${edata.getEmail()}">${edata.getEmail()}</a></li>
         <li class="list-group-item">Github: <a href="https://www.github.com/${edata.getGithub()}" class="card-link">https://www.github.com/${edata.getGithub()}</a></li>
     </ul>
+    </div>
 </div>`
 }
 
 const intern = idata => {
     return `
+    <div class="col-3">
     <div class="card" style="width: 18rem;">
     <div class="card-body">
         <!-- Name of employee -->
@@ -46,6 +51,7 @@ const intern = idata => {
         <li class="list-group-item">Email: <a href="mailto:${idata.getEmail()}">${idata.getEmail()}</a></li>
         <li class="list-group-item">School: ${idata.getSchool()}</li>
     </ul>
+    </div>
 </div>`
 }
 
@@ -87,7 +93,7 @@ const template = answers => {
         </div>
     </div>
     <!-- container where cards will be generated into -->
-    <div class="container">
+    <div class="container row justify-content-between" id="employee-container">
         <!-- card hmtl that will go into js and then be pulled here -->
         ${allAnswers(answers)}
     </div>
