@@ -12,17 +12,17 @@ const managerQuest = () => {
         {
             type: "input",
             name: "name",
-            message: "What is the employee's name?"
+            message: "What is the manager's name?"
         },
         {
             type: "input",
             name: "id",
-            message: "What is the employee's id number?"
+            message: "What is the manager's id number?"
         },
         {
             type: "input",
             name: "email",
-            message: "What is the employee's email?"
+            message: "What is the manager's email?"
         },
         {
             type: "input",
@@ -38,15 +38,63 @@ const managerQuest = () => {
 }
 
 const engineerQuest = () => {
-    engineerAnswers = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
-    allAnswersArray.push(engineerAnswers);
-    return newEmployee();
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's id number?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's github username?"
+        }
+    ])
+        .then((engineerAnswers) => {
+            engineerAnswers = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
+            allAnswersArray.push(engineerAnswers);
+            return newEmployee();
+        })
 }
 
 const internQuest = () => {
-    internAnswers = new intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.github);
-    allAnswersArray.push(internAnswers);
-    return newEmployee();
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's id number?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?"
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What school does the intern attend?"
+        }
+    ])
+        .then((internAnswers) => {
+            internAnswers = new intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.github);
+            allAnswersArray.push(internAnswers);
+            return newEmployee();
+        })
 }
 
 newEmployee = () => {
