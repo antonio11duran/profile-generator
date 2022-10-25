@@ -3,6 +3,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const template = require("./src/template");
+const fs = require("fs");
 const allAnswersArray = [];
 
 const init = () => { managerQuest() };
@@ -72,17 +73,17 @@ const internQuest = () => {
         {
             type: "input",
             name: "name",
-            message: "What is the engineer's name?"
+            message: "What is the intern's name?"
         },
         {
             type: "input",
             name: "id",
-            message: "What is the engineer's id number?"
+            message: "What is the intern's id number?"
         },
         {
             type: "input",
             name: "email",
-            message: "What is the engineer's email?"
+            message: "What is the intern's email?"
         },
         {
             type: "input",
@@ -91,7 +92,7 @@ const internQuest = () => {
         }
     ])
         .then((internAnswers) => {
-            internAnswers = new intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.github);
+            internAnswers = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
             allAnswersArray.push(internAnswers);
             return newEmployee();
         })
@@ -108,9 +109,9 @@ newEmployee = () => {
             }
         ])
         .then(val => {
-            if (val === 'Engineer') {
+            if (val.role === "Engineer") {
                 engineerQuest();
-            } else if (val === 'Intern') {
+            } else if (val.role === "Intern") {
                 internQuest();
             }
             else {
