@@ -4,7 +4,7 @@
 
 This project uses node, inquirer, and OOP to ask the user detailed questions about the numerous members on their team. Once completed, it will generate an html file with bootstrap cards with the entered information.
 
-![walkthrough video](./assets/Profile-Generator%20Walkthrough.webm)
+![page screenshot](./assets/page-screenshot.png)
 
 ## Table of Contents
 
