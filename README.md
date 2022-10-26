@@ -10,12 +10,6 @@ This project uses node, inquirer, and OOP to ask the user detailed questions abo
 
 [Usage](#usage)
 
-[License](#license)
-
-[Contributing](#contributing)
-
-[Tests](#tests)
-
 [Questions](#questions)
 
 ## Installation
